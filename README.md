@@ -3,6 +3,20 @@
 - @material-ui/core
 - @material-ui/icons
 
+**Add AppBar**
+- copy/paste example
+
+**Add withRoot**
+- copy/paste: src/withRoot.js
+- import withRoot
+- wrap App in withRoot
+
+**Typography**
+- import Typography
+- use h1 for title
+
+**EventsGrid**
+- import { Paper, withStyles, Grid, Typography } from '@material-ui/core'
 
 
 # Theme
@@ -39,4 +53,3 @@
 # Modify with CSS
 - className
 - classes
-
