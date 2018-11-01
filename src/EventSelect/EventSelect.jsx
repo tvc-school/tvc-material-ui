@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import { Checkbox, TextField, InputLabel, MenuItem, FormControl, Select, FormControlLabel } from '@material-ui/core'
+import { InputLabel, MenuItem, FormControl, Select } from '@material-ui/core'
 
 const styles = theme => ({
   root: {
@@ -20,30 +20,10 @@ const styles = theme => ({
 class SimpleSelect extends React.Component {
   state = {
     eventId: '',
-    filtered: false,
-    filterText: '',
   }
 
   handleChange = event => {
-    console.log('control name', event.target.name)
-    const name = event.target.name
-    if (name === 'filter') {
-      this.setState({
-        filtered: event.target.checked
-      })
-    } else {
-      this.setState({ [name]: event.target.value })
-    }
-  }
-
-  filterEvents = () => {
-    const { filtered, filterText } = this.state
-    const { events } = this.props
-    if (filtered && filterText.length > 0) {
-      return events.filter(e => e.title.startsWith(filterText))
-    } else {
-      return events
-    }
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   render() {
@@ -65,40 +45,13 @@ class SimpleSelect extends React.Component {
               <em>None</em>
             </MenuItem>
             {
-              this.filterEvents().map(e => {
+              events.map(e => {
                 return (
                   <MenuItem key={e.id} value={e.id}>{e.title}</MenuItem>
                   )
               })
             }
           </Select>
-        </FormControl>
-        <FormControl className={classes.formControl}>
-          <FormControlLabel
-            control={
-              <Checkbox
-                name='filter'
-                checked={this.state.filtered}
-                onChange={this.handleChange}
-                value="filter"
-              />
-            }
-            label='Filter'
-          />
-          {
-            this.state.filtered
-              ? <TextField
-                  id="filter-text"
-                  name='filterText'
-                  label="Filter text"
-                  className={classes.textField}
-                  value={this.state.filterText}
-                  onChange={this.handleChange}
-                  margin="normal"
-                />
-              : null
-          }
-
         </FormControl>
       </form>
     )

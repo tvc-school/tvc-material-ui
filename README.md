@@ -1,22 +1,24 @@
 
-**Add packages**
-- @material-ui/core
-- @material-ui/icons
+- Add packages
+  - @material-ui/core
+  - @material-ui/icons
 
-**Add AppBar**
+- Add AppBar
 - copy/paste example
 
-**Add withRoot**
-- copy/paste: src/withRoot.js
-- import withRoot
-- wrap App in withRoot
+- Add withRoot
+  - copy/paste: src/withRoot.js
+  - import withRoot
+  - wrap App in withRoot
 
-**Typography**
-- import Typography
-- use h1 for title
+- Typography
+  - import Typography
+  - use h1 for title
 
-**EventsGrid**
-- import { Paper, withStyles, Grid, Typography } from '@material-ui/core'
+- EventsGrid
+- EventList
+- EventSelect
+- BreakPoints
 
 
 # Theme
