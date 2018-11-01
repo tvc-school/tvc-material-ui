@@ -5,6 +5,7 @@ import { Typography } from '@material-ui/core'
 import events from '../events'
 import EventGrid from '../EventGrid'
 import EventList from '../EventList'
+import EventSelect from '../EventSelect'
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         >
           Learn Material UI
         </Typography>
+        <EventSelect events={events} />
         <EventList events={events} />
         <EventGrid events={events} />
 

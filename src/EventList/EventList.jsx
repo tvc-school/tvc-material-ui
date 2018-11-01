@@ -24,7 +24,7 @@ const EventList = ({ classes, events }) => {
         {
           events.map(e => {
             return (
-              <ListItem>
+              <ListItem key={e.id}>
                 <ListItemText primary={e.title} secondary={e.dates.startDateTime} />
               </ListItem>
             )
