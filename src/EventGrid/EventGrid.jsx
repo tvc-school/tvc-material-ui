@@ -1,5 +1,5 @@
 import React from 'react'
-import { Paper, withStyles, Grid, Typography } from '@material-ui/core'
+import { withStyles, Grid, Typography } from '@material-ui/core'
 import EventCard from './EventCard'
 
 const EventsGrid = ({ classes, events }) => {
